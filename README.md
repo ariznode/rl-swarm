@@ -109,8 +109,8 @@ After this setup you can see your node - [Gensyn Testnet Dashboard](https://dash
 
 If you are Termius user you can back up swarm.pem with sftp
 
-<p align="center">
-  <img src="https://drive.google.com/uc?export=view&id=1pn6OXJ0c-0GbaDYTMOKfC1X_bZV2-4M8" width="400" alt="Gambar dari Google Drive">
+<p align="left">
+  <img src="https://drive.google.com/uc?export=view&id=1pn6OXJ0c-0GbaDYTMOKfC1X_bZV2-4M8" width="600" height="400" alt="Gambar dari Google Drive">
 </p>
 
 ### Key Commands
