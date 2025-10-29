@@ -119,7 +119,7 @@ If you are Termius user you can back up swarm.pem with sftp
 ```sh
 screen -d -r swarm
 ```
-2. Avtivate virtual environment
+2. Activate virtual environment
 ```sh
 rm -rf .venv && git pull && python3 -m venv .venv && source .venv/bin/activate
 ```
