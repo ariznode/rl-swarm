@@ -119,7 +119,11 @@ If you are Termius user you can back up swarm.pem with sftp
 ```sh
 screen -d -r swarm
 ```
-2. Start node
+2. Avtivate virtual environment
+```sh
+rm -rf .venv && git pull && python3 -m venv .venv && source .venv/bin/activate
+```
+3. Start node
 ```sh
 pkill -f rl-swarm || true && bash run_rl_swarm.sh
 ```
