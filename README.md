@@ -9,6 +9,7 @@ RL Swarm is a peer-to-peer system for reinforcement learning. It allows you to t
 - 8 core CPU, 32 GB RAM.
 
 
+
 OR
 
 - CUDA devices (officially supported):
