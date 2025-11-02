@@ -1,6 +1,181 @@
+Ariz Node
+ariznode
+Online
+Discuss technical issues here.
+
+Ariz Node
+
+ — Yesterday at 3:20 PM
+go to dashboard
+littlejaiswal (✧ᴗ✧)
+
+ — Yesterday at 3:21 PM
+@Aminu here, you can see the name and ID
+But if you remember your old one,
+Aminu — Yesterday at 3:21 PM
+Ok
+Aminu — Yesterday at 3:23 PM
+Didn't see it in my Gensyn dashboard
+Ariz Node
+
+ — Yesterday at 3:23 PM
+and head your cursor to peer name
+then you'll see
+Aminu — Yesterday at 3:24 PM
+Ok now can i close or must confirm?
+littlejaiswal (✧ᴗ✧)
+
+ — Yesterday at 3:24 PM
+ctrl + a d 
+
+Deattched and then close
+Aminu — Yesterday at 3:25 PM
+Done
+Aminu — Yesterday at 3:25 PM
+Image
+Aminu — Yesterday at 3:26 PM
+No need to write down peer id?
+Ariz Node
+
+ — Yesterday at 3:26 PM
+no need
+Lordy — Yesterday at 3:26 PM
+For what purpose? You can always extract it when needed
+Ariz Node
+
+ — Yesterday at 3:27 PM
+most important thing is back up swarm.prm 
+Aminu — Yesterday at 3:27 PM
+Ok
+Aminu — Yesterday at 3:27 PM
+Now can i close?
+Ariz Node
+
+ — Yesterday at 3:27 PM
+ofc
+Aminu — Yesterday at 3:27 PM
+Ok
+littlejaiswal (✧ᴗ✧)
+
+ — Yesterday at 3:29 PM
+Wait 3 to 4 hours check on dashboard with same mail u used while sign in in local host 
+
+https://dashboard.gensyn.ai/
+Gensyn | Testnet
+The Gensyn Public Testnet brings persistent identity to decentralised AI systems and provides a location to track participation, maintain attribution, make payments, coordinate remote execution, verify untrusted operations, log decentralised training runs, crowd-fund large-scale training efforts, and more.
+Gensyn | Testnet
+Lordy — Yesterday at 3:29 PM
+Waiting for what @xailong_6969 is typing 👀👀
+Ariz Node
+
+ — Yesterday at 3:29 PM
+whenever you want to check run this command
+
+screen -d -r gensyn
+@xailong_6969 wenser
+Safa — Yesterday at 3:31 PM
+Still curious about what @xailong_6969 is cooking
+xailong_6969 — Yesterday at 3:34 PM
+Temporary solution:-
+
+For those who are facing 
+[Errno 111] Connection refused issue
+make sure to update your node first under rl-swarm directory
+git stash && git pull
+after that run this command 
+1st command :- 
+sudo rm rgym_exp/src/manager.py
+it will delete the whole file,and if i suggest with sed command it will throw intendation error. thats why i will suggest you guys do it through this guide 2nd command:- 
+nano rgym_exp/src/manager.py
+
+open this path then paste the full code which contains in this file after that  save it.
+dont change anything otherwise it will throw another error
+
+Ctrl + O  → Enter → Ctrl + X
 import os
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 import time
 from collections import defaultdict
+import subprocess
+import re
+Expand
+connection refused fix.txt
+14 KB
+xailong_6969
+ pinned a message to this channel. See all pinned messages. — Yesterday at 3:34 PM
+༒Ǥнσsτ༒ 𝗚𝗘𝗡𝗦𝗬𝗡 — Yesterday at 3:36 PM
+:hflogo:
+Aminu — Yesterday at 3:37 PM
+Okay
+Safa — Yesterday at 3:38 PM
+thanku for sharing :hflogo:
+Hoàng Su Kều
+
+ — Yesterday at 3:40 PM
+Does the node utilize the power of 2 VGAs at the same time?
+bazil564 — Yesterday at 3:42 PM
+restarted with this cmd will report back if it crashes
+Image
+Ariz Node
+
+ — Yesterday at 3:42 PM
+ok ser
+ven — Yesterday at 3:43 PM
+Wait did you purposely Ctrl c it
+xailong_6969 — Yesterday at 3:44 PM
+Yes
+xailong_6969 — Yesterday at 3:44 PM
+Yeah sure
+xailong_6969 — Yesterday at 3:44 PM
+:KEKW_drink:
+DanielTr150
+
+ — Yesterday at 3:46 PM
+Is your Idol? 😄
+JMLsig — Yesterday at 3:47 PM
+the other pc get the problem again,reintall and use the conmmand:deactivate && rm -rf .venv && python3 -m venv .venv && source .venv/bin/activate && bash run_rl_swarm.shstill get this error:
+Image
+bazil564 — Yesterday at 3:47 PM
+bruhh obv not
+Safa — Yesterday at 3:47 PM
+Yes, it can
+Ariz Node
+
+ — Yesterday at 3:47 PM
+⁠︱💬︱rl-swarm-support⁠
+this is the solution
+xailong_6969 — Yesterday at 3:48 PM
+no
+Antonio
+
+ — Yesterday at 3:48 PM
+Why?
+Image
+xailong_6969 — Yesterday at 3:49 PM
+⁠︱💬︱rl-swarm-support⁠
+xailong_6969 — Yesterday at 3:49 PM
+can u scroll up?
+Antonio
+
+ — Yesterday at 3:50 PM
+I’m unable to on termius
+xailong_6969 — Yesterday at 3:50 PM
+Ctrl+c
+valen — Yesterday at 3:51 PM
+Cntrl c then Rerun it again
+xailong_6969 — Yesterday at 3:51 PM
+Can you run this and send screenshot?
+
+cat logs/swarm_launcher.log
+﻿
+import os
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+import time
+from collections import defaultdict
+import subprocess
+import re
+import logging
+logging.getLogger("hivemind").setLevel(logging.CRITICAL)
 
 from genrl.blockchain import SwarmCoordinator
 from genrl.communication import Communication
@@ -15,6 +190,7 @@ from genrl.roles import RoleManager
 from genrl.state import GameState
 from genrl.trainer import TrainerModule
 from huggingface_hub import login, whoami
+from hivemind import DHT
 
 from rgym_exp.src.utils.name_utils import get_name_from_peer_id
 from rgym_exp.src.prg_module import PRGModule
@@ -40,7 +216,6 @@ class SwarmGameManager(BaseGameManager, DefaultGameManagerMixin):
         hf_push_frequency: int = 20,
         **kwargs,
     ):
-
         super().__init__(
             max_stage=max_stage,
             max_round=max_round,
@@ -93,6 +268,9 @@ class SwarmGameManager(BaseGameManager, DefaultGameManagerMixin):
         # PRG Game
         self.prg_module = PRGModule(log_dir, **kwargs)
         self.prg_game = self.prg_module.prg_game
+        
+        # Store bootnodes for reconnection
+        self.bootnodes = kwargs.get('bootnodes', [])
 
     def _get_total_rewards_by_agent(self):
         rewards_by_agent = defaultdict(int)
@@ -153,8 +331,6 @@ class SwarmGameManager(BaseGameManager, DefaultGameManagerMixin):
     def _hook_after_round_advanced(self):
         try:
             if self.prg_game:
-                # TODO: Ideally I think the judge client request question bit should come in the manager and the trainer should be doing only PyTorch-y stuff, 
-                # but I have kept it consistent with the evaluate function for now.
                 prg_history_dict = self.prg_module.prg_history_dict
                 results_dict = self.trainer.play_prg_game_logits(prg_history_dict)
                 self.prg_module.play_prg_game(results_dict, self.peer_id)
@@ -218,19 +394,91 @@ class SwarmGameManager(BaseGameManager, DefaultGameManagerMixin):
                     stack_info=True,
                 )
 
+    def find_existing_p2pd(self):
+        """Try to find existing p2pd ports"""
+        try:
+            result = subprocess.run(['ss', '-tlpn'], capture_output=True, text=True)
+            output = result.stdout
+            
+            # Look for p2pd in the output
+            if 'p2pd' in output:
+                # Extract the ports
+                tcp_match = re.search(r'.*:(\d+).*p2pd.*tcp', output)
+                udp_match = re.search(r'.*:(\d+).*p2pd.*udp', output)
+                
+                if tcp_match and udp_match:
+                    return [
+                        f"/ip4/0.0.0.0/tcp/{tcp_match.group(1)}",
+                        f"/ip4/0.0.0.0/udp/{udp_match.group(1)}/quic"
+                    ]
+            return None
+        except:
+            return None
+
     def agent_block(
         self, check_interval=5.0, log_timeout=10.0, max_check_interval=60.0 * 15
     ):
         start_time = time.monotonic()
         fetch_log_time = start_time
-        check_backoff = (
-            check_interval  # Exponential backoff for already finished rounds.
-        )
+        check_backoff = check_interval
+        reconnect_attempts = 0
+        max_reconnect_attempts = 3
+        
+        # Store initial configuration
+        initial_peers = self.communication.dht.initial_peers
+        
         while time.monotonic() - start_time < self.train_timeout:
             curr_time = time.monotonic()
-            _ = self.communication.dht.get_visible_maddrs(latest=True)
+            try:
+                _ = self.communication.dht.get_visible_maddrs(latest=True)
+                reconnect_attempts = 0
+            except Exception as e:
+                get_logger().warning(f"P2PD connection lost at {time.strftime('%Y-%m-%d %H:%M:%S')}")
+                get_logger().warning(f"Error details: {str(e)}")
+                
+                if reconnect_attempts < max_reconnect_attempts:
+                    try:
+                        # Check for existing p2pd first
+                        existing_maddrs = self.find_existing_p2pd()
+                        
+                        if existing_maddrs:
+                            get_logger().info(f"Found existing p2pd ports, attempting to connect...")
+                            host_maddrs = existing_maddrs
+                            client_mode = True
+                            start = False
+                        else:
+                            get_logger().info(f"No existing p2pd found, creating new instance...")
+                            host_maddrs = ["/ip4/0.0.0.0/tcp/0"]
+                            client_mode = False
+                            start = True
+                        
+                        # Try to reconnect
+                        get_logger().info(f"Reconnection attempt {reconnect_attempts + 1}/{max_reconnect_attempts}")
+                        new_dht = DHT(
+                            start=start,
+                            host_maddrs=host_maddrs,
+                            initial_peers=initial_peers + self.bootnodes,
+                            client_mode=client_mode,
+                            use_ipfs=False
+                        )
+                        
+                        time.sleep(5)
+                        self.communication.dht = new_dht
+                        get_logger().info("Successfully created new DHT connection")
+                    except Exception as reinit_error:
+                        get_logger().warning(f"Connection attempt {reconnect_attempts + 1} failed: {reinit_error}")
+                        reconnect_attempts += 1
+                        if reconnect_attempts < max_reconnect_attempts:
+                            get_logger().info(f"Retrying in {check_interval} seconds...")
+                            time.sleep(check_interval)
+                            continue
+                
+                if reconnect_attempts >= max_reconnect_attempts:
+                    get_logger().warning("Max reconnection attempts reached, continuing without DHT...")
+                    self.state.round += 1
+                    return
 
-            # Retrieve current round and stage.
+            # Retrieve current round and stage
             try:
                 round_num, stage = self.coordinator.get_round_and_stage()
             except Exception as e:
@@ -239,14 +487,13 @@ class SwarmGameManager(BaseGameManager, DefaultGameManagerMixin):
                         f"Could not fetch round and stage: {e}. Next check in {check_interval}s."
                     )
                     fetch_log_time = curr_time
-
                 time.sleep(check_interval)
                 continue
 
             if round_num >= self.state.round:
                 get_logger().info(f"🐝 Joining round: {round_num}")
-                check_backoff = check_interval  # Reset backoff after successful round
-                self.state.round = round_num  # advance to swarm's round.
+                check_backoff = check_interval
+                self.state.round = round_num
                 return
             else:
                 get_logger().info(
@@ -259,3 +506,5 @@ class SwarmGameManager(BaseGameManager, DefaultGameManagerMixin):
                 return
 
         get_logger().info("Training timed out!")
+connection refused fix.txt
+14 KB
