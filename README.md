@@ -496,4 +496,6 @@ Then Ctrl + O then Enter then Ctrl + x
 
 then start your node
 
-
+```bash
+bash run_rl_swarm.sh
+```
