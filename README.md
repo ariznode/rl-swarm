@@ -26,18 +26,18 @@ OR
 #### 1. Install Dependencies
 
 ```sh
-sudo apt update && sudo apt upgrade -y
-sudo apt install screen curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev  -y
+sudo apt update && apt upgrade -y
+sudo apt install screen curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
 sudo apt install python3 python3-pip python3-venv python3-dev -y
 sudo apt update
-curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash -
-sudo apt install -y nodejs
+
+apt update
+curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
+apt install -y nodejs
 node -v
+
 npm install -g yarn
 yarn -v
-curl -o- -L https://yarnpkg.com/install.sh | bash
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-source ~/.bashrc
 ```
 
 #### 2. Clone this repo
