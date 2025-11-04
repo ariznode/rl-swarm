@@ -59,7 +59,6 @@ screen -S swarm
 ```sh
 cd rl-swarm
 python3 -m venv .venv
-source .venv/bin/activate
 . .venv/bin/activate
 bash ./run_rl_swarm.sh
 ```
