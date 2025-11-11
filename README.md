@@ -54,7 +54,7 @@ Create screen session
 screen -S swarm
 ```
 
-####Run Swarm node
+#### Run Swarm node
 
 ```sh
 cd rl-swarm
