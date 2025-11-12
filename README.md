@@ -8,8 +8,6 @@ RL Swarm is a peer-to-peer system for reinforcement learning. It allows you to t
 
 - 8 core CPU, 32 GB RAM.
 
-
-
 OR
 
 - CUDA devices (officially supported):
@@ -157,5 +155,7 @@ then update your node
 ```bash
 rm -rf .venv && git stash && git pull && python3 -m venv .venv && source .venv/bin/activate && bash run_rl_swarm.sh
 ```
+
+For model use default model
 
 That's All
