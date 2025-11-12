@@ -92,11 +92,8 @@ During setup, you'll be asked if you'd like to participate in the **1. Hugging F
 1. N then ENTER
 2. Choose your Model
    Models:
-   - Gensyn/Qwen2.5-0.5B-Instruct
-   - Qwen/Qwen3-0.6B
-   - nvidia/AceInstruct-1.5B
-   - dnotitia/Smoothie-Qwen3-1.7B
-   - Gensyn/Qwen2.5-1.5B-Instruct
+   - Qwen/Qwen2.5-Coder-0.5B-Instruct
+   - Qwen/Qwen2.5-Coder-1.5B-Instruct
 
    If you want to use default mode press ENTER
 3. Y then ENTER (to join Judge)
