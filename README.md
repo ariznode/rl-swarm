@@ -39,24 +39,23 @@ npm install -g yarn
 yarn -v
 ```
 
-#### 2. Clone this repo
-
-```sh
-git clone https://github.com/gensyn-ai/rl-swarm
-```
-
 #### 2. Running Swarm Inside Screen
 
 Create screen session
 
 ```sh
-screen -S swarm
+screen -S gensyn
+```
+
+#### 3. Clone this repo
+
+```sh
+cd && git clone https://github.com/gensyn-ai/rl-swarm && cd rl-swarm
 ```
 
 #### Run Swarm node
 
 ```sh
-cd rl-swarm
 python3 -m venv .venv
 . .venv/bin/activate
 bash ./run_rl_swarm.sh
