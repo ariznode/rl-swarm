@@ -70,7 +70,7 @@ After your terminal showing like this you need to detach screen by pressing `CTR
 
 and you need to tunneling http://localhost:3000/ by enter this command
 ```sh
-sudo npm install -g localtunnel
+npm install -g localtunnel
 curl https://loca.lt/mytunnelpassword
 lt --port 3000
 ```
@@ -90,13 +90,12 @@ Wait untill you see
 During setup, you'll be asked if you'd like to participate in the **1. Hugging Face** **2. Model** **. AI Prediction Market**.
 
 1. N then ENTER
-2. Choose your Model
+2. Choose your Model,   If you want to use default mode press ENTER
    Models:
    - Qwen/Qwen2.5-Coder-0.5B-Instruct
    - Qwen/Qwen2.5-Coder-1.5B-Instruct
 
    If you want to use default mode press ENTER
-3. Y then ENTER (to join Judge)
 
 After this setup you can see your node - [Gensyn Testnet Dashboard](https://dashboard.gensyn.ai/).
 
