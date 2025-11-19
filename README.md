@@ -58,7 +58,7 @@ cd && git clone https://github.com/gensyn-ai/rl-swarm && cd rl-swarm
 ```sh
 python3 -m venv .venv
 . .venv/bin/activate
-bash ./run_rl_swarm.sh
+bash run_rl_swarm.sh
 ```
 
 ### Login
