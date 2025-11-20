@@ -152,6 +152,62 @@ then update your node
 rm -rf .venv && git stash && git pull && python3 -m venv .venv && source .venv/bin/activate && bash run_rl_swarm.sh
 ```
 
-For model use default model
+# Gswarm Monitor Bot
+
+Make sure to install all dependesies, and create your own tg bot with @botfather and your eoa address.
+
+What is token bot?
+
+- after you create your own bot you'll see your bot token
+
+What is chat id?
+
+- you can get chat id @userinfobot on telegram
+
+what is eoa?
+
+- you can find your eoa : https://dashboard.gensyn.ai/?application=RLSwarm and login using email method, and then you will see green 0xaddress
+
+#### Gswarm installation
+
+```bash
+screen -S gswarm
+```
+
+Copy this command box one by one
+
+```bash
+curl -L go.dev/dl/go1.22.4.linux-amd64.tar.gz | tar -xzf - -C /usr/local
+```
+
+```bash
+echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> ~/.bash_profile
+echo 'export PATH=$PATH:$(go env GOPATH)/bin' >> ~/.bash_profile
+```
+
+```bash
+curl -L go.dev/dl/go1.22.4.linux-amd64.tar.gz | tar -xzf - -C /usr/local
+```
+
+```bash
+go version
+```
+
+```bash
+go install github.com/Deep-Commit/gswarm/cmd/gswarm@latest
+```
+
+```bash
+sed -i 's/0xFaD7C5e93f28257429569B854151A1B8DCD404c2/0x7745a8FE4b8D2D2c3BB103F8dCae822746F35Da0/g' $(which gswarm)
+```
+
+```bash
+gswarm
+```
+
+and enter your :
+- Bot token
+- Chat ID
+- EOA address
 
 That's All
