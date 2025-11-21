@@ -70,7 +70,6 @@ After your terminal showing like this you need to detach screen by pressing `CTR
 
 and you need to tunneling http://localhost:3000/ by enter this command
 ```sh
-apt install npm
 npm install -g localtunnel
 curl https://loca.lt/mytunnelpassword
 lt --port 3000
