@@ -126,7 +126,7 @@ pkill -f rl-swarm || true && bash run_rl_swarm.sh
 
 Run in swarm directory
 
-If you are inside screen detach your screen first by pressing `ctrl a + d` then
+If you are inside screen detach your screen first by pressing `ctrl a + d`
 
 ```bash
 pkill screen
