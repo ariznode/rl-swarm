@@ -34,7 +34,9 @@ apt update
 curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
 apt install -y nodejs
 node -v
+```
 
+```sh
 npm install -g yarn
 yarn -v
 ```
