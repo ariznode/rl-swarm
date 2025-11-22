@@ -50,7 +50,7 @@ screen -S gensyn
 #### 3. Clone this repo
 
 ```sh
-cd && git clone https://github.com/gensyn-ai/rl-swarm && cd rl-swarm
+git clone https://github.com/gensyn-ai/rl-swarm && cd rl-swarm
 ```
 
 #### Run Swarm node
