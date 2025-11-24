@@ -188,10 +188,6 @@ echo 'export PATH=$PATH:$(go env GOPATH)/bin' >> ~/.bash_profile
 ```
 
 ```bash
-curl -L go.dev/dl/go1.22.4.linux-amd64.tar.gz | tar -xzf - -C /usr/local
-```
-
-```bash
 source ~/.bash_profile
 ```
 
