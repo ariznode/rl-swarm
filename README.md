@@ -192,7 +192,7 @@ curl -L go.dev/dl/go1.22.4.linux-amd64.tar.gz | tar -xzf - -C /usr/local
 ```
 
 ```bash
-source .bash_profile
+source ~/.bash_profile
 ```
 
 ```bash
