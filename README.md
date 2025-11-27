@@ -81,7 +81,7 @@ you will get url to login and your ip ass tunnel password
 After success login attach swarm screen
 
 ```sh
-screen -r swarm
+screen -r gensyn
 ```
 Wait untill you see
 
@@ -113,7 +113,7 @@ If you are Termius user you can back up swarm.pem with sftp
 
 1. Attach screen to check node logs
 ```sh
-screen -d -r swarm
+screen -d -r gensysn
 ```
 2. Activate virtual environment
 ```sh
