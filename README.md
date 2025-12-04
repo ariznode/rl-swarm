@@ -82,8 +82,8 @@ echo "deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudf
 ```
 
 ```sh
-apt update
-apt install cloudflared -y
+sudo apt update
+sudo apt install cloudflared -y
 ```
 
 ```sh
