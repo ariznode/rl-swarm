@@ -72,11 +72,25 @@ After your terminal showing like this you need to detach screen by pressing `CTR
 
 and you need to tunneling http://localhost:3000/ by enter this command
 ```sh
-npm install -g localtunnel
-curl https://loca.lt/mytunnelpassword
-lt --port 3000
+curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg \
+  | tee /usr/share/keyrings/cloudflare-main.gpg >/dev/null
 ```
-you will get url to login and your ip ass tunnel password
+
+```sh
+echo "deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared jammy main" \
+  | tee /etc/apt/sources.list.d/cloudflared.list
+```
+
+```sh
+apt update
+apt install cloudflared -y
+```
+
+```sh
+cloudflared tunnel --url http://localhost:3000
+```
+
+you will get url to login
 
 After success login attach swarm screen
 
